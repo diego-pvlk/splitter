@@ -1,0 +1,16 @@
+{
+    "name": "Splitter",
+    "description": "Split the Bill!",
+    "icons": [
+      {
+        "src": "images/icon-logo.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "index.html",
+    "display": "standalone",
+    "theme_color": "#C5E4E7",
+    "background_color": "#C5E4E7"
+  }
+  
