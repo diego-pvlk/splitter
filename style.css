@@ -14,8 +14,7 @@
     --error: hsl(22, 71%, 50%);
 }
   
-html {
-    display: table;
+html {    
     margin: auto;
     height: 100%;
 }
