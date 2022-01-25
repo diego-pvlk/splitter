@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" initial-scale="1.0">
+  <!-- displays site properly based on user's device -->
+
+  <script src="script.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="manifest" href="splitter.webmanifest">
+
+  <title>Splitter | Split the Bill!</title>
+
+</head>
+
+<body>
+
+  <h2>S P L I<br>T T E R</h2>
+
+  <div class="container">
+
+    <div class="calc-container">
+
+      <div name="bill" class="no-zero-value">
+        <h4 class="header-calc">Bill</h4>
+        <p></p>
+      </div>
+
+      <input type="text" name="bill" maxlength="8" class="input-num icon-bill" id="bill" placeholder="0"
+        inputmode="numeric">
+
+      <h4 class="header-calc">Select Tip %</h4>
+
+      <div class="tip-container">
+        <button class="tip-button" value="5">5%</button>
+        <button class="tip-button" value="10">10%</button>
+        <button class="tip-button" value="15">15%</button>
+        <button class="tip-button" value="25">25%</button>
+        <button class="tip-button" value="50">50%</button>
+        <input type="text" class="tip-button tip-custom" id="custom" maxlength="2" placeholder="Custom"
+          inputmode="numeric">
+      </div>
+
+      <div name="people" class="no-zero-value">
+        <h4 class="header-calc">Number of People</h4>
+        <p></p>
+      </div>
+
+      <input type="text" name="people" maxlength="3" class="input-num icon-person" id="people" placeholder="0"
+        inputmode="numeric">
+
+    </div>
+
+    <div class="total-container">
+      <div class="person-container">
+
+        <div class="result">
+          <div>
+            <h4>Tip Amount</h4>
+            <p>/ person</p>
+          </div>
+          <div id="tipPerson">$0.00</div>
+        </div>
+        
+        <div class="result">
+          <div >
+            <h4>Total</h4>
+            <p>/ person</p>
+          </div>
+          <div id="totalPerson">$0.00</div>
+        </div>
+
+      </div>
+      <button id="reset-btn" class="reset" disabled>Reset</button>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

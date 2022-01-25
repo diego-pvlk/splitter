@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap');
+
+:root {
+    --body-bg: hsl(185, 41%, 84%);
+    --card-bg: #fff;
+    --strong-cyan: hsl(172, 67%, 50%);
+    --light-cyan: hsl(173, 61%, 77%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --medium-dark-cyan: hsl(185, 23%, 36%);
+    --dark-grayish-cyan: hsl(184, 14%, 56%);
+    --input-placeholder: hsla(185, 16%, 53%, 0.5);
+    --bg-input: hsl(189, 41%, 95%);
+    --white: #fff;
+    --error: hsl(22, 71%, 50%);
+}
+  
+html {
+    display: table;
+    margin: auto;
+    height: 100%;
+}
+
+body {
+    background-color: var(--body-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    font-family: 'Space Mono', monospace;
+    justify-content: center;
+}
+
+body h2 {
+    margin: 10px;
+    font-family: 'Space Mono', monospace;
+    color: var(--medium-dark-cyan);
+}
+
+h4, p {
+    margin: 0;
+}
+
+.container {
+    background-color: var(--card-bg);
+    border-radius: 32px;
+    display: flex;
+    padding: 50px;
+    gap: 50px;
+    margin: 32px;
+}
+
+.calc-container {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1;
+}
+
+.header-calc {
+    color: var(--medium-dark-cyan);
+    margin-bottom: -24px;
+}
+
+.no-zero-value {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.no-zero-value p {
+    font-weight: 700;
+    color: var(--error);
+    margin-bottom: -24px;
+}
+
+.total-container {
+    background-color: var(--very-dark-cyan);
+    padding: 40px;
+    border-radius: 16px;
+    color: var(--white);
+    gap: 20px;
+    width: 300px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: -16px -16px -16px 0;
+    justify-self: center;
+}
+
+.person-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.person-container p {
+    font-size: 0.85rem;
+    opacity: 0.45;
+}  
+
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.result h4,
+.result p {
+    width: 100px;
+}
+
+.result #tipPerson,
+.result #totalPerson {
+    color: var(--strong-cyan);  
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#reset-btn {
+    box-sizing: content-box;
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    font-size: 1.3rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    padding: 4px 16px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    height: 2rem;
+    cursor: pointer;
+}
+
+#reset-btn:hover:enabled {
+    background-color: var(--light-cyan);
+}
+
+#reset-btn:disabled {
+    opacity: 0.25;
+    cursor: default;
+}
+
+.icon-bill {
+    background-image: url(./images/icon-dollar.svg);   
+}
+
+.icon-person {
+    background-image: url(./images/icon-person.svg);
+}
+
+.input-num {
+    text-align: right;
+    background-color: var(--bg-input);
+    background-repeat: no-repeat;
+    background-position: 16px;
+    background-size: 12px, contain;
+    color: var(--very-dark-cyan);
+    padding: 4px 16px;
+    height: 2rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 1.35rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+.input-num:focus {
+    outline: none;
+    border-color: var(--strong-cyan);
+    transition: 0.2s; 
+}
+
+input::placeholder {
+    color: var(--input-placeholder);
+}
+
+
+.tip-container {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.tip-button {
+    flex: 1;
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    box-sizing: content-box;
+    font-size: 1.35rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    min-width: 5rem;
+    height: 2rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 4px 8px;  
+}
+
+.tip-button:hover,
+.tip-custom.active:hover:placeholder-shown {
+    background-color: var(--light-cyan);
+    transition: 0.1s;
+    color: var(--very-dark-cyan);
+    cursor: pointer;
+    
+}
+
+.tip-custom:hover,
+.tip-custom.active:hover:placeholder-shown {
+    cursor: text;
+}
+
+.tip-button:focus-visible {
+    outline: 3px var(--strong-cyan);
+    outline-style: ridge;
+}
+
+.tip-custom,
+.tip-custom.active:placeholder-shown,
+.tip-custom.active:hover:focus:placeholder-shown {
+    background-color: var(--bg-input);
+    color: var(--very-dark-cyan);
+    text-align: end;  
+}
+
+.tip-custom::placeholder {
+    text-align: center;
+    color: var(--very-dark-cyan); 
+}
+
+.tip-custom.active:focus-visible::placeholder {
+    color: var(--input-placeholder); 
+}
+
+.tip-custom:focus-visible {
+    outline: none;
+    background-color: var(--bg-input);
+    border-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.active {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.no-zero-input {
+    border-color: var(--error);
+}
+.no-zero-input:focus {
+    border-color: var(--error);
+}
+
+@media screen and (max-width: 880px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    .container {
+        margin: 0;
+        width: 660px;
+        padding: 32px 32px;
+        gap: 32px;
+    }
+    .calc-container {      
+        padding: 4px 0;
+    }
+    .total-container {
+        width: 320px;
+        padding: 32px;
+        margin: -4px;
+        gap: 32px;
+    }
+    .result #tipPerson,
+    .result #totalPerson {
+        font-size: 2.0rem;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .container {
+        flex-direction: column;
+        width: 300px;
+        align-items: center;
+        padding-bottom: 16px;
+        gap: 32px;
+        border-radius: 32px 32px 0 0;
+    }
+    .calc-container {
+        width: 300px;
+        padding: 0 0;
+    }
+    .total-container {
+        width: 256px;
+        margin: 8px;
+    }
+    .person-container {
+        margin-top: 16px;
+    }
+    .result #tipPerson,
+    .result #totalPerson {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    .container {
+        width: 280px;
+        padding: 16px 16px;
+    }
+    .calc-container {
+        width: 270px;
+    }
+    .total-container {
+        width: 220px;
+    }
+    .result #tipPerson,
+    .result #totalPerson {
+        font-size: 1.55rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg: hsl(183, 80%, 13%);
+        --card-bg: hsl(190, 25%, 11%);
+        --bg-input: hsl(189, 41%, 4%);
+    }
+    body h2 {
+        color: var(--white);
+    }    
+    .header-calc {
+        color: var(--white);
+    }
+    .tip-custom.active, 
+    .tip-custom:hover::placeholder {
+        color: var(--very-dark-cyan);
+    }
+    .tip-custom,
+    .input-num,
+    .tip-custom:focus,
+    .tip-custom.active:focus,
+    .tip-custom::placeholder  {
+        color: var(--white);
+    }  
+}
