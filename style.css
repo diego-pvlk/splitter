@@ -247,9 +247,7 @@ input::placeholder {
     color: var(--very-dark-cyan);
 }
 
-.no-zero-input {
-    border-color: var(--error);
-}
+.no-zero-input,
 .no-zero-input:focus {
     border-color: var(--error);
 }
