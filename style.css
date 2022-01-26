@@ -128,6 +128,7 @@ h4, p {
     border-radius: 5px;
     height: 2rem;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 #reset-btn:hover:enabled {
