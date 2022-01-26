@@ -154,7 +154,7 @@ h4, p {
     background-position: 16px;
     background-size: 12px, contain;
     color: var(--very-dark-cyan);
-    padding: 5px 16px;
+    padding: 5px 15px;
     height: 2rem;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -193,16 +193,15 @@ input::placeholder {
     height: 2rem;
     border: 2px solid transparent;
     border-radius: 5px;
-    padding: 5px 8px;  
+    padding: 5px 15px;  
 }
 
 .tip-button:hover,
 .tip-custom.active:hover:placeholder-shown {
     background-color: var(--light-cyan);
-    transition: 0.1s;
+    transition: 0.2s;
     color: var(--very-dark-cyan);
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
 
 .tip-custom:hover,
