@@ -20,6 +20,12 @@ html {
     height: 100%;
 }
 
+header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 body {
     background-color: var(--body-bg);
     display: table-cell;
@@ -27,18 +33,11 @@ body {
     font-family: 'Space Mono', monospace;   
 }
 
-body h2 {
-    margin: 10px;
-    font-family: 'Space Mono', monospace;
-    color: var(--medium-dark-cyan);
-    text-align: center;
-}
-
-h4, p {
+label, p {
     margin: 0;
 }
 
-.container {
+main {
     background-color: var(--card-bg);
     max-width: 950px;
     border-radius: 24px;
@@ -48,7 +47,7 @@ h4, p {
     margin: 32px;
 }
 
-.calc-container {
+.calculate-container {
     max-width: 380px;
     display: flex;
     flex-direction: column;
@@ -56,8 +55,9 @@ h4, p {
     flex: 1;
 }
 
-.header-calc {
+label {
     color: var(--medium-dark-cyan);
+    font-weight: 700;
     margin-bottom: -24px;
 }
 
@@ -104,7 +104,7 @@ h4, p {
     flex-wrap: wrap;
 }
 
-.result h4,
+.result b,
 .result p {
     width: 100px;
 }
@@ -256,13 +256,13 @@ input::placeholder {
         padding: 0;
         margin: 0;
     }
-    .container {
+    main {
         margin: 0;
         width: 660px;
         padding: 32px 32px;
         gap: 32px;
     }
-    .calc-container {      
+    .calculate-container {      
         padding: 4px 0;
     }
     .total-container {
@@ -278,7 +278,7 @@ input::placeholder {
 }
 
 @media screen and (max-width: 730px) {
-    .container {
+    main {
         flex-direction: column;
         width: 300px;
         align-items: center;
@@ -286,7 +286,7 @@ input::placeholder {
         gap: 32px;
         border-radius: 32px 32px 0 0;
     }
-    .calc-container {
+    .calculate-container {
         width: 300px;
         padding: 0 0;
     }
@@ -308,11 +308,11 @@ input::placeholder {
         padding: 0;
         margin: 0;
     }
-    .container {
+    main {
         width: 280px;
         padding: 16px 16px;
     }
-    .calc-container {
+    .calculate-container {
         width: 270px;
     }
     .total-container {
@@ -330,10 +330,10 @@ input::placeholder {
         --card-bg: hsl(190, 25%, 11%);
         --bg-input: hsl(189, 41%, 4%);
     }
-    body h2 {
-        color: var(--white);
+    header img {
+        filter: brightness(4);
     }    
-    .header-calc {
+    label {
         color: var(--white);
     }
     .tip-custom.active, 

@@ -39,6 +39,7 @@ function listenEvents() {
 
 function toValidNum(input) {
     const noZeroVal = document.querySelectorAll('.no-zero-value');
+    
     if (input.id == 'bill') {
         // allow only numbers from zero to 9 and dots
         input.value = input.value.replace(/[^0-9.]/g, '');
@@ -53,14 +54,14 @@ function toValidNum(input) {
     
     if (input.value && +input.value == 0 && input.id != 'custom') {
         noZeroVal.forEach( function(val) {
-            if (val.getAttribute('name') == input.id) {
+            if (val.classList.contains(input.id)) {
                 val.querySelector('p').innerText = 'Can\'t be zero.';
             }
         });
         input.classList.add('no-zero-input')
     } else {   
         noZeroVal.forEach( function(val) {
-            if (val.getAttribute('name') == input.id) {
+            if (val.classList.contains(input.id)) {
                 val.querySelector('p').innerText = '';
             }
         });
