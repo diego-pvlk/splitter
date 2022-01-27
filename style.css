@@ -2,7 +2,7 @@
 
 :root {
     --body-bg: hsl(185, 41%, 84%);
-    --card-bg: #fff;
+    --main-bg: #fff;
     --strong-cyan: hsl(172, 67%, 50%);
     --light-cyan: hsl(173, 61%, 77%);
     --very-dark-cyan: hsl(183, 100%, 15%);
@@ -41,7 +41,7 @@ label, p {
 }
 
 main {
-    background-color: var(--card-bg);
+    background-color: var(--main-bg);
     max-width: 950px;
     border-radius: 24px;
     display: flex;
@@ -64,12 +64,12 @@ label {
     margin-bottom: -24px;
 }
 
-.no-zero-value {
+.zero-box {
     display: flex;
     justify-content: space-between; 
 }
 
-.no-zero-value p {
+.zero-box p {
     font-weight: 700;
     color: var(--error);
     margin-bottom: -24px;
@@ -165,12 +165,12 @@ label {
     font-size: 1.35rem;
     font-family: 'Space Mono', monospace;
     font-weight: 700;
+    transition: 0.2s;
 }
 
 .input-num:focus {
     outline: none;
     border-color: var(--strong-cyan);
-    transition: 0.2s; 
 }
 
 input::placeholder {
@@ -198,12 +198,12 @@ input::placeholder {
     border: 2px solid transparent;
     border-radius: 5px;
     padding: 5px 15px;  
+    transition: 0.2s;
 }
 
 .tip-button:hover,
 .tip-custom.active:hover:placeholder-shown {
     background-color: var(--light-cyan);
-    transition: 0.2s;
     color: var(--very-dark-cyan);
     cursor: pointer;  
 }
@@ -247,8 +247,8 @@ input::placeholder {
     color: var(--very-dark-cyan);
 }
 
-.no-zero-input,
-.no-zero-input:focus {
+.border-warning,
+.border-warning:focus {
     border-color: var(--error);
 }
 
@@ -327,9 +327,9 @@ input::placeholder {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --body-bg: hsl(183, 80%, 13%);
-        --card-bg: hsl(190, 25%, 11%);
-        --bg-input: hsl(189, 41%, 4%);
+        --body-bg: hsl(183, 80%, 11%);
+        --main-bg: hsl(190, 25%, 11%);
+        --bg-input: hsl(189, 41%, 5%);
     }
     h1 img {
         filter: brightness(4);
