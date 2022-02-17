@@ -1,6 +1,6 @@
 # Solution for Frontend Mentor: Tip Calculator App
 
-Access here: https://diego-sergio.github.io/splitter/
+Access here: https://diego-pvlk.github.io/splitter/
 
 - Pure CSS and JS
 - Dark mode compatible
